@@ -1,0 +1,419 @@
+/* Navbar.css - Clean Professional Design */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Left section - Logo with tagline */
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700; /* Reduced from 800 */
+  color: #000000;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.logo-tagline {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Center section - Main navigation */
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 30px; /* Add margin to bring About and Contact closer */
+}
+
+.main-nav {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500; /* Reduced from 600 */
+  font-size: 1.05rem;
+  position: relative;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  color: #333;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Categories dropdown - FIXED ARROW POSITION */
+/* Categories dropdown - NO LINK, JUST DROPDOWN TRIGGER */
+.categories-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Categories text - not a link, just text with pointer cursor */
+.categories-dropdown > span {
+  color: #000000;
+  font-weight: 500; /* Reduced from 600 */
+  font-size: 1.05rem;
+  padding: 8px 0;
+  position: relative;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Arrow positioned NEXT to the text */
+.categories-dropdown > span::after {
+  content: "▼";
+  font-size: 0.7rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.categories-dropdown:hover > span::after {
+  transform: rotate(180deg);
+}
+
+.categories-dropdown > span:hover {
+  color: #333;
+}
+
+/* Hover underline effect for Categories */
+.categories-dropdown > span::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: width 0.3s ease;
+}
+
+.categories-dropdown:hover > span::before {
+  width: 100%;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px 20px;
+  min-width: 180px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  margin-top: 5px;
+}
+
+.categories-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 400; /* Reduced from 500 */
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  padding-left: 16px;
+}
+
+/* Right section - FIXED TO BE CLOSER TO CENTER */
+.nav-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-right a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500; /* Reduced from 600 */
+  font-size: 1.05rem;
+  position: relative;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-right a:hover {
+  color: #333;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: width 0.3s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+/* Active link indicator */
+.main-nav a.active,
+.nav-right a.active {
+  font-weight: 500; /* Reduced from 700 */
+  color: #000000;
+}
+
+.main-nav a.active::after,
+.nav-right a.active::after {
+  width: 100%;
+}
+
+/* Fix for the Categories link */
+.categories-dropdown > a.active {
+  font-weight: 500; /* Reduced from 700 */
+  color: #000000;
+}
+
+.categories-dropdown > a.active::after {
+  width: 100%;
+}
+
+/* Remove default underline from Categories link */
+.categories-dropdown > a::after {
+  width: auto !important; /* Don't apply the underline to the arrow */
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  animation: slideInDown 0.8s ease forwards;
+}
+
+/* Staggered animation for nav items */
+.logo { animation: fadeIn 0.6s ease 0.1s forwards; opacity: 0; }
+.logo-tagline { animation: fadeIn 0.6s ease 0.2s forwards; opacity: 0; }
+.main-nav a:nth-child(1) { animation: fadeIn 0.6s ease 0.3s forwards; opacity: 0; }
+.categories-dropdown > span { animation: fadeIn 0.6s ease 0.4s forwards; opacity: 0; }
+.main-nav a:nth-child(3) { animation: fadeIn 0.6s ease 0.5s forwards; opacity: 0; }
+.nav-right a { animation: fadeIn 0.6s ease 0.6s forwards; opacity: 0; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar background on scroll */
+.navbar.scrolled {
+  background: #ffffff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 12px 50px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+  
+  .nav-center {
+    margin: 0 20px;
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+  }
+  
+  .main-nav {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  .nav-center {
+    margin: 0 15px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.8rem;
+  }
+  
+  .main-nav {
+    gap: 20px;
+  }
+  
+  .main-nav a,
+  .categories-dropdown > span,
+  .nav-right a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  
+  .nav-center {
+    display: none;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Mobile menu */
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  
+  .mobile-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .mobile-nav a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500; /* Reduced from 600 */
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-nav a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateX(5px);
+  }
+  
+  .mobile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 15px;
+    margin-top: 10px;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+  }
+}

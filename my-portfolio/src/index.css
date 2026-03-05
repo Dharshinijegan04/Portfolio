@@ -1,0 +1,23 @@
+/* Light mode */
+.light-mode {
+  background: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode */
+.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+/* Adjust cards for dark mode */
+.dark-mode .project-card,
+.dark-mode .skill-card,
+.dark-mode .achievement-item,
+.dark-mode .timeline-content {
+  background: #1f1f1f;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
