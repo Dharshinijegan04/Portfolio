@@ -65,9 +65,10 @@
 /* HEADING - SMALLER SIZE */
 /* FIXED: Name will never hide on any screen */
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
   margin-bottom: 15px;
+  margin-top: 60px;
   color: #000000;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   animation: slideDown 1s ease 0.3s forwards;
@@ -338,6 +339,7 @@
 @media (max-width: 1200px) {
   .hero h1 {
     font-size: 2.7rem;
+    margin-top: 50px;
   }
   
   .hero h3 {
@@ -357,6 +359,7 @@
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 2.4rem;
+    margin-top: 40px;
   }
   
   .hero h3 {
@@ -390,6 +393,7 @@
   
   .hero h1 {
     font-size: 2.2rem;
+    margin-top: 30px;
   }
   
   .hero h3 {
@@ -448,6 +452,7 @@
   
   .hero h1 {
     font-size: 1.9rem;
+    margin-top: 20px;
   }
   
   .hero h3 {

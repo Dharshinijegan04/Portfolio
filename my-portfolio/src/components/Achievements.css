@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   font-family: 'Poppins', 'Segoe UI', sans-serif;
-  padding: 0;
+  padding: 80px 0 60px;
   margin: 0;
 }
 
@@ -62,6 +62,7 @@
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 50px;
+  margin-top: 20px;
   color: #000000;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   animation: slideDown 1s ease 0.3s forwards;
@@ -220,6 +221,7 @@
 @media (max-width: 1200px) {
   .achievements-container h2 {
     font-size: 2.7rem;
+    margin-top: 15px;
   }
   
   .achievements-container {
@@ -233,8 +235,13 @@
 }
 
 @media (max-width: 992px) {
+  .achievements {
+    padding: 70px 0 50px;
+  }
+  
   .achievements-container h2 {
     font-size: 2.4rem;
+    margin-top: 10px;
   }
   
   .achievements-container {
@@ -258,16 +265,17 @@
 
 @media (max-width: 768px) {
   .achievements {
-    padding: 0;
+    padding: 60px 0 40px;
   }
   
   .achievements-container {
-    padding: 60px 25px;
+    padding: 50px 25px;
   }
   
   .achievements-container h2 {
     font-size: 2.2rem;
     margin-bottom: 40px;
+    margin-top: 5px;
   }
   
   .achievement-list {
@@ -294,16 +302,17 @@
 
 @media (max-width: 480px) {
   .achievements {
-    padding: 0;
+    padding: 50px 0 30px;
   }
   
   .achievements-container {
-    padding: 50px 20px;
+    padding: 40px 20px;
   }
   
   .achievements-container h2 {
     font-size: 1.9rem;
     margin-bottom: 35px;
+    margin-top: 0;
   }
   
   .achievement-item {
