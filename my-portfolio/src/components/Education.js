@@ -8,7 +8,7 @@ function Education() {
       college: "Vels Institute of Science, Technology & Advanced Studies, Chennai",
       year: "2022 – 2026",
       details: "Final Year Student",
-      cgpa: "9.4",
+      cgpa: "9.05",
       percentage: null,
       status: "Current"
     },

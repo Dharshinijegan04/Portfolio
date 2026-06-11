@@ -1,4 +1,11 @@
-/* Navbar.css - Clean Professional Design */
+/* Navbar.css - Clean Professional Design (Fully Responsive - Desktop + Mobile) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -12,6 +19,8 @@
   align-items: center;
   z-index: 1000;
   font-family: 'Poppins', 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+  animation: slideInDown 0.8s ease forwards;
 }
 
 /* Left section - Logo with tagline */
@@ -25,10 +34,12 @@
 
 .logo {
   font-size: 1.8rem;
-  font-weight: 700; /* Reduced from 800 */
+  font-weight: 700;
   color: #000000;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  animation: fadeIn 0.6s ease 0.1s forwards;
+  opacity: 0;
 }
 
 .logo-tagline {
@@ -37,15 +48,17 @@
   font-weight: 400;
   letter-spacing: 0.3px;
   white-space: nowrap;
+  animation: fadeIn 0.6s ease 0.2s forwards;
+  opacity: 0;
 }
 
-/* Center section - Main navigation */
+/* Center section - Main navigation (DESKTOP) */
 .nav-center {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
-  margin: 0 30px; /* Add margin to bring About and Contact closer */
+  margin: 0 30px;
 }
 
 .main-nav {
@@ -58,7 +71,7 @@
 .main-nav a {
   color: #000000;
   text-decoration: none;
-  font-weight: 500; /* Reduced from 600 */
+  font-weight: 500;
   font-size: 1.05rem;
   position: relative;
   padding: 8px 0;
@@ -85,17 +98,22 @@
   width: 100%;
 }
 
-/* Categories dropdown - FIXED ARROW POSITION */
-/* Categories dropdown - NO LINK, JUST DROPDOWN TRIGGER */
+.main-nav a:nth-child(1) {
+  animation: fadeIn 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* Categories dropdown - DESKTOP */
 .categories-dropdown {
   position: relative;
   display: inline-block;
+  animation: fadeIn 0.6s ease 0.4s forwards;
+  opacity: 0;
 }
 
-/* Categories text - not a link, just text with pointer cursor */
 .categories-dropdown > span {
   color: #000000;
-  font-weight: 500; /* Reduced from 600 */
+  font-weight: 500;
   font-size: 1.05rem;
   padding: 8px 0;
   position: relative;
@@ -107,15 +125,12 @@
   cursor: pointer;
 }
 
-/* Arrow positioned NEXT to the text */
 .categories-dropdown > span::after {
   content: "▼";
   font-size: 0.7rem;
   font-weight: 400;
   transition: transform 0.3s ease;
   display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
 }
 
 .categories-dropdown:hover > span::after {
@@ -126,7 +141,6 @@
   color: #333;
 }
 
-/* Hover underline effect for Categories */
 .categories-dropdown > span::before {
   content: "";
   position: absolute;
@@ -172,7 +186,7 @@
   padding: 8px 12px;
   color: #000000;
   text-decoration: none;
-  font-weight: 400; /* Reduced from 500 */
+  font-weight: 400;
   transition: all 0.2s ease;
   border-radius: 4px;
   font-size: 0.95rem;
@@ -184,7 +198,7 @@
   padding-left: 16px;
 }
 
-/* Right section - FIXED TO BE CLOSER TO CENTER */
+/* Right section */
 .nav-right {
   display: flex;
   align-items: center;
@@ -194,12 +208,14 @@
 .nav-right a {
   color: #000000;
   text-decoration: none;
-  font-weight: 500; /* Reduced from 600 */
+  font-weight: 500;
   font-size: 1.05rem;
   position: relative;
   padding: 8px 0;
   transition: all 0.3s ease;
   white-space: nowrap;
+  animation: fadeIn 0.6s ease 0.6s forwards;
+  opacity: 0;
 }
 
 .nav-right a:hover {
@@ -224,7 +240,7 @@
 /* Active link indicator */
 .main-nav a.active,
 .nav-right a.active {
-  font-weight: 500; /* Reduced from 700 */
+  font-weight: 500;
   color: #000000;
 }
 
@@ -233,19 +249,125 @@
   width: 100%;
 }
 
-/* Fix for the Categories link */
-.categories-dropdown > a.active {
-  font-weight: 500; /* Reduced from 700 */
+/* Navbar scroll effect */
+.navbar.scrolled {
+  background: #ffffff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 12px 50px;
+}
+
+/* Mobile menu button - HIDDEN ON DESKTOP */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: #000000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #ffffff;
 }
 
-.categories-dropdown > a.active::after {
-  width: 100%;
+.mobile-menu-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
-/* Remove default underline from Categories link */
-.categories-dropdown > a::after {
-  width: auto !important; /* Don't apply the underline to the arrow */
+/* Mobile navigation panel */
+.mobile-nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-nav.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-nav a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 14px 18px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fefefe;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav a:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: translateX(5px);
+}
+
+/* Mobile dropdown toggle */
+.mobile-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fefefe;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobile-dropdown-header span:first-child {
+  font-size: 1.05rem;
+}
+
+.mobile-dropdown-header span:last-child {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-header.active span:last-child {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-items {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.mobile-dropdown-items.show {
+  display: flex;
+}
+
+.mobile-dropdown-items a {
+  border: none;
+  padding: 10px 18px;
+  background: rgba(0, 0, 0, 0.02);
+  font-weight: 400;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 /* Animations */
@@ -260,18 +382,6 @@
   }
 }
 
-.navbar {
-  animation: slideInDown 0.8s ease forwards;
-}
-
-/* Staggered animation for nav items */
-.logo { animation: fadeIn 0.6s ease 0.1s forwards; opacity: 0; }
-.logo-tagline { animation: fadeIn 0.6s ease 0.2s forwards; opacity: 0; }
-.main-nav a:nth-child(1) { animation: fadeIn 0.6s ease 0.3s forwards; opacity: 0; }
-.categories-dropdown > span { animation: fadeIn 0.6s ease 0.4s forwards; opacity: 0; }
-.main-nav a:nth-child(3) { animation: fadeIn 0.6s ease 0.5s forwards; opacity: 0; }
-.nav-right a { animation: fadeIn 0.6s ease 0.6s forwards; opacity: 0; }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -283,15 +393,7 @@
   }
 }
 
-/* Navbar background on scroll */
-.navbar.scrolled {
-  background: #ffffff;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 12px 50px;
-}
-
-/* Responsive design */
+/* ========= RESPONSIVE: TABLET & MOBILE ========= */
 @media (max-width: 1200px) {
   .navbar {
     padding: 15px 30px;
@@ -312,7 +414,7 @@
 
 @media (max-width: 992px) {
   .navbar {
-    padding: 15px 20px;
+    padding: 15px 25px;
   }
   
   .nav-center {
@@ -324,11 +426,11 @@
   }
   
   .logo-tagline {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   
   .main-nav {
-    gap: 20px;
+    gap: 22px;
   }
   
   .main-nav a,
@@ -340,9 +442,10 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 12px 15px;
+    padding: 12px 20px;
   }
   
+  /* Hide desktop navigation on mobile */
   .nav-center {
     display: none;
   }
@@ -351,69 +454,63 @@
     display: none;
   }
   
-  /* Mobile menu button */
+  /* Show mobile menu button */
   .mobile-menu-btn {
     display: block;
-    background: none;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #000000;
+  }
+  
+  /* Adjust logo size for mobile */
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .logo {
     font-size: 1.2rem;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
   }
   
-  .mobile-menu-btn:hover {
-    background: rgba(0, 0, 0, 0.05);
+  .logo-tagline {
+    font-size: 0.6rem;
   }
   
-  /* Mobile menu */
+  .mobile-menu-btn {
+    padding: 6px 12px;
+    font-size: 1.3rem;
+  }
+  
   .mobile-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 999;
+    top: 60px;
+    padding: 15px;
   }
   
-  .mobile-nav.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  
-  .mobile-nav a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 500; /* Reduced from 600 */
+  .mobile-nav a,
+  .mobile-dropdown-header {
     padding: 12px 15px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
   }
-  
-  .mobile-nav a:hover {
-    background: rgba(0, 0, 0, 0.05);
-    transform: translateX(5px);
-  }
-  
-  .mobile-dropdown {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 15px;
-    margin-top: 10px;
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-  }
+}
+
+/* Active link for mobile */
+.mobile-nav-link.active {
+  background: rgba(0, 0, 0, 0.08);
+  border-left: 3px solid #000000;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }

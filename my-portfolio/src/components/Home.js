@@ -6,7 +6,7 @@ function Home() {
     <section className="hero">
       <div className="overlay">
         <h1>Hi, I'm <span className="highlight">Selva Dharshini 👋</span></h1>
-        <h3>B.Tech in Automation & Robotics | CGPA: 9.4</h3>
+        <h3>B.Tech in Automation & Robotics | CGPA: 9.05</h3>
         <p>
           🚀 Motivated Robotics Engineering student passionate about 
           <strong> Web Development, AI, and Automation</strong>.  

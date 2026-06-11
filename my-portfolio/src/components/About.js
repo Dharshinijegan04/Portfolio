@@ -26,7 +26,7 @@ function About() {
           <p>
             I have gained valuable international exposure through the Student Mobility Programme 
             at INTI International University, Malaysia (2025). I currently maintain a strong 
-            academic record with a CGPA of 9.4 / 10.
+            academic record with a CGPA of 9.05 / 10.
           </p>
 
           <p>
