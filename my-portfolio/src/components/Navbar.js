@@ -7,20 +7,39 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+
       <div className="nav-left">
         <div className="logo">Selva Dharshini Jeganathan</div>
-        <div className="logo-tagline">Robotics Engineer & Developer</div>
+        <div className="logo-tagline">
+          Robotics Engineer & Developer
+        </div>
       </div>
 
       <div
         className="hamburger"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen(true)}
       >
         ☰
       </div>
 
-      <div className={`nav-right ${menuOpen ? "active" : ""}`}>
-        <div className="main-nav">
+      <div className={`mobile-overlay ${menuOpen ? "active" : ""}`}>
+        <div className="mobile-menu">
+
+          <div className="mobile-header">
+            <div>
+              <div className="mobile-logo">
+                Selva Dharshini
+              </div>
+            </div>
+
+            <button
+              className="close-btn"
+              onClick={() => setMenuOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+
           <Link to="/" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
@@ -28,6 +47,39 @@ function Navbar() {
           <Link to="/about" onClick={() => setMenuOpen(false)}>
             About
           </Link>
+
+          <Link to="/education" onClick={() => setMenuOpen(false)}>
+            Education
+          </Link>
+
+          <Link to="/skills" onClick={() => setMenuOpen(false)}>
+            Skills
+          </Link>
+
+          <Link to="/achievements" onClick={() => setMenuOpen(false)}>
+            Achievements
+          </Link>
+
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>
+            Projects
+          </Link>
+
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </Link>
+
+          <button className="resume-btn">
+            Resume
+          </button>
+
+        </div>
+      </div>
+
+      {/* Desktop Navbar */}
+      <div className="nav-right">
+        <div className="main-nav">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
 
           <div className="categories-dropdown">
             <span>Categories </span>
@@ -40,11 +92,10 @@ function Navbar() {
             </div>
           </div>
 
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
+
     </nav>
   );
 }
