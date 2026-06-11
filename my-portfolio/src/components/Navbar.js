@@ -8,6 +8,7 @@ function Navbar() {
   return (
     <nav className="navbar">
 
+      {/* Logo Section */}
       <div className="nav-left">
         <div className="logo">Selva Dharshini Jeganathan</div>
         <div className="logo-tagline">
@@ -15,29 +16,28 @@ function Navbar() {
         </div>
       </div>
 
+      {/* Hamburger / Close Icon */}
       <div
         className="hamburger"
-        onClick={() => setMenuOpen(true)}
+        onClick={() => setMenuOpen(!menuOpen)}
       >
-        ☰
+        {menuOpen ? "✕" : "☰"}
       </div>
 
-      <div className={`mobile-overlay ${menuOpen ? "active" : ""}`}>
-        <div className="mobile-menu">
+      {/* Mobile Menu */}
+      <div
+        className={`mobile-overlay ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(false)}
+      >
+        <div
+          className="mobile-menu"
+          onClick={(e) => e.stopPropagation()}
+        >
 
           <div className="mobile-header">
-            <div>
-              <div className="mobile-logo">
-                Selva Dharshini
-              </div>
+            <div className="mobile-logo">
+              Selva Dharshini
             </div>
-
-            <button
-              className="close-btn"
-              onClick={() => setMenuOpen(false)}
-            >
-              ✕
-            </button>
           </div>
 
           <Link to="/" onClick={() => setMenuOpen(false)}>
@@ -68,21 +68,19 @@ function Navbar() {
             Contact
           </Link>
 
-          <button className="resume-btn">
-            Resume
-          </button>
-
         </div>
       </div>
 
-      {/* Desktop Navbar */}
+      {/* Desktop Menu */}
       <div className="nav-right">
         <div className="main-nav">
+
           <Link to="/">Home</Link>
+
           <Link to="/about">About</Link>
 
           <div className="categories-dropdown">
-            <span>Categories </span>
+            <span>Categories ▼</span>
 
             <div className="dropdown-menu">
               <Link to="/education">Education</Link>
@@ -93,6 +91,7 @@ function Navbar() {
           </div>
 
           <Link to="/contact">Contact</Link>
+
         </div>
       </div>
 
