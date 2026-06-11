@@ -89,7 +89,7 @@ function Education() {
         
         <div className="professional-stats">
           <div className="stat-box">
-            <span className="stat-number">9.4</span>
+            <span className="stat-number">9.05</span>
             <span className="stat-description">Current Academic Score</span>
           </div>
           <div className="stat-box">
@@ -109,7 +109,7 @@ function Education() {
         <div className="professional-summary">
           <h3 className="summary-title">Academic Profile Summary</h3>
           <ul className="summary-points">
-            <li>Pursuing B.Tech in Automation & Robotics with a strong academic record (CGPA: 9.4/10)</li>
+            <li>Pursuing B.Tech in Automation & Robotics with a strong academic record (CGPA: 9.05/10)</li>
             <li>Participated in international student exchange program at INTI University, Malaysia</li>
             <li>Consistent academic performance across all education levels</li>
             <li>Specialized in Science stream during Higher Secondary education</li>
