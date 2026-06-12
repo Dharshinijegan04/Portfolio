@@ -80,7 +80,7 @@ function Navbar() {
           <Link to="/about">About</Link>
 
           <div className="categories-dropdown">
-            <span>Categories ▼</span>
+            <span>Categories </span>
 
             <div className="dropdown-menu">
               <Link to="/education">Education</Link>
